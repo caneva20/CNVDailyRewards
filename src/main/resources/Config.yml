@@ -1,0 +1,39 @@
+MYSQL:
+  HOST: 'localhost'
+  DB: 'test'
+  USER: 'root'
+  PASSWORD: ''
+  PORT: 3306
+# Delay is in ticks, 20 ticks equals 1 second, so 5 ticks is a quarter of a second or 4 times per second or 250 milliseconds
+# Higher values MAY improve server tps, but saving and loading info will take more time.
+# This setting does NOT affect your server directly.
+DB_CONNECTION_DELAY: 5
+REWARDS:
+  MAIN_MENU:
+    NAME: '&6&lDaily rewards'
+    CONSECUTIVE:
+      SLOT_ID: 2
+    CUMULATIVE:
+      SLOT_ID: 6
+  CONSECUTIVE:
+    ENABLED: true
+    PERMISSION: cnv.dailyrewards.consecutive
+    MENU_NAME: '&6&lConsecutive rewards'
+    MULTIPLIERS:
+      double:
+        MULTIPLY: 2
+        PERMISSION: cnv.dailyrewards.consecutive.multiplier.double
+      triple:
+        MULTIPLY: 3
+        PERMISSION: cnv.dailyrewards.consecutive.multiplier.trilple
+  CUMULATIVE:
+    ENABLED: true
+    PERMISSION: cnv.dailyrewards.cumulative
+    MENU_NAME: '&6&lCumulative rewards'
+    MULTIPLIERS:
+      double:
+        MULTIPLY: 2
+        PERMISSION: cnv.dailyrewards.consecutive.multiplier.double
+      triple:
+        MULTIPLY: 3
+        PERMISSION: cnv.dailyrewards.consecutive.multiplier.trilple

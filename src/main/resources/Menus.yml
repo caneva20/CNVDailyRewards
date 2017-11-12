@@ -1,0 +1,18 @@
+MENUS:
+  DailyRewards:
+    NAME: '&6&lDaily rewards'
+    BUTTONS:
+      consecutive:
+        ITEM_ID: 331
+        SLOT: 2
+        BUTTON_NAME: '&bConsecutive rewards'
+        BUTTON_LORE:
+      cumulative:
+        ITEM_ID: 264
+        SLOT: 6
+        BUTTON_NAME: '&bCumulative rewards'
+        BUTTON_LORE:
+    BLANK_SLOT:
+      ITEM_ID: 102
+      BUTTON_NAME: 'BLANK SLOT'
+      BUTTON_LORE:

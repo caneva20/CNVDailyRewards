@@ -1,0 +1,16 @@
+name: CNVDailyRewards
+version: 1.0-RC
+description: Gives your players daily rewards
+author: caneva20
+authors: [Game_Crytus]
+depend: [CNVCore]
+
+main: me.caneva20.CNVDailyRewards.CNVDailyRewards
+
+commands:
+  cnvdailyrewards:
+    description: 'Shows CNVDailyRewards info'
+    default: false
+  reward:
+    description: 'Shows the reward page'
+    default: true

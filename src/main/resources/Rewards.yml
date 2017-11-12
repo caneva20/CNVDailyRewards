@@ -1,0 +1,71 @@
+#Rewards can be items, money, commands or permissions
+#To setup a reward first set the type of reward, add a ; (semicolon) and then the parameters for that reward. Each reward type has its own parameters
+#Reward types:
+# ITEM -> Gives an specific item
+#   PARAMS:
+#     - ID -> The id of the item
+#     - DATA -> The data of the item
+#     - AMOUNT -> The amount to be given. Must be between 1 and 64
+#     - NAME -> The name of the item. This is a CUSTOM name, you can set it to whatever you want, and use colors (&)
+#               Eg: [NAME:My custom item]
+#               Eg: [NAME:&6God's &lSWORD]
+#     - LORE -> The lore of the item. This is a CUSTOM lore, you can set it to whatever you want, and use colors (&).
+#               Separate multiple lines with two commas (,,)
+#               Eg: [LORE:Line 1,,Line 2,,Line 3]
+#     - ENCHANTMENT -> The enchantments of the item. You can use any enchantments, specify the level after a : (colon)
+#               EG: [ENCHANTMENT:Protection:4]
+#               Separate multiple enchantments with two commas (,,)
+#               Eg: [ENCHANTMENT:Protection:4,,Sharpness:5]
+# MONEY -> Gives an specific amount of money
+#   PARAMS:
+#     - AMOUNT -> The amount of money to be given
+# COMMAND -> Executes an specific command
+#   PARAMS:
+#     NAME -> The command to be executed
+#     METHOD -> How the command should be executed
+#           PARAMS:
+#             - OP: Execute the command as OP, be careful here, with method the player will be set as op to execute the command.
+#                   The OP will be removed just after the command be executed
+#             - CONSOLE: Execute a command through the console
+#             - PLAYER: The command will be executed by the player itself. Attention, the player must have the permission to run the command. otherwise it will fail
+# PERMISSION -> Gives an specific permission
+#   PARAMS:
+#     PERMISSION -> The permission to be given
+# MESSAGE -> Sends a message to the player
+#   PARAMS:
+#     MESSAGE -> The message to e sent
+# GLOBAL_MESSAGE -> Sends a message to every one
+#   PARAMS:
+#     MESSAGE -> The message to be sent
+# %CUSTOM% -> Any other type added by other plugins
+
+#Cumulative points are given to player for every day he joins the server
+#If he don't joins for one or more days, he will not earn points for those days, but all points collected so for will be saved
+#Good for players who doesn't logs in every day
+CUMULATIVE:
+  1: #Points need to those rewards
+    #Menu configuration
+    MENU:
+      #The name of your reward
+      NAME: 'Your first reward'
+      ITEM_ID: 264
+      ITEM_LORE:
+    #List of possibles rewards, one of them will be randomly selected based on its chance
+    REWARD_SETS:
+      #The name of this set doesn't matter at all, only used here, for organization
+      1:
+        #The chance of this reward be selected
+        CHANCE: 10
+        #The rewards given in this set, can have as many as you want and all of them will be given
+        REWARDS:
+          - 'ITEM:[ID:264;AMOUNT:64;NAME:Enjoy some DIAMONDS!!]'
+      2:
+        CHANCE: 90
+        REWARDS:
+          - 'MONEY:[AMOUNT:{{RANDOM(1000,1200)}}]'
+          - 'ITEM:[ID:264;AMOUNT:32]'
+
+
+#Consecutive points are given to a player every day he joins the server
+#If he don't joins for one or more days, he will lose all points earned so far
+CONSECUTIVE:
